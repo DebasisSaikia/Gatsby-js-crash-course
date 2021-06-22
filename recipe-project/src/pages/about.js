@@ -1,10 +1,36 @@
 import React from "react"
 import Layout from "../components/Layout"
+import { StaticImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
 const About = () => {
   return (
     <Layout>
-      <h1>About page</h1>
+      <main className="page">
+        <section className="about-page">
+          <article>
+            <h2>I'm baby coloring book poke taxidermy</h2>
+            <p>
+              Taxidermy forage glossier letterpress heirloom before they sold
+              out you probably haven't heard of them banh mi biodiesel chia.
+            </p>
+            <p>
+              Taiyaki tumblr flexitarian jean shorts brunch, aesthetic salvia
+              retro.
+            </p>
+            <Link to="/contact" className="btn">
+              Contact
+            </Link>
+          </article>
+
+          <StaticImage
+            src="https://images.pexels.com/photos/704971/pexels-photo-704971.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            alt="description"
+            className="about-img"
+            placeholder="blurred"
+          />
+        </section>
+      </main>
     </Layout>
   )
 }
