@@ -1,10 +1,13 @@
 import React from "react"
+import AllProducts from "../components/AllProducts"
 import Layout from "../components/Layout"
 
 const Products = () => {
   return (
     <Layout>
-      <h1>Products</h1>
+      <main className="page">
+        <AllProducts />
+      </main>
     </Layout>
   )
 }
