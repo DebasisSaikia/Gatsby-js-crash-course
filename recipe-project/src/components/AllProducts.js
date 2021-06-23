@@ -25,7 +25,7 @@ const query = graphql`
 const AllProducts = () => {
   const data = useStaticQuery(query)
   const recipes = data.allContentfulRecipe.nodes
-  console.log(recipes)
+
   return (
     <section className="recipes-container">
       <TagList recipes={recipes} />
