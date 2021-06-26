@@ -1,0 +1,29 @@
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+    align-items: center;
+}
+
+.header h2 {
+    font-size: 4em;
+}
+
+.header h3 {
+    font-size: 3em;
+    font-weight: 500;
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(rgb(206, 86, 6), rgb(165, 2, 2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn {
+    display: inline-block;
+    /* background-color: transparent; */
+    background: -webkit-linear-gradient(rgb(240, 92, 23), rgb(238, 25, 25));
+    padding: 10px 16px;
+    border-radius: 4px;
+    margin-top: 20px;
+    font-weight: 500;
+}
