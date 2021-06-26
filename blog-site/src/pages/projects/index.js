@@ -5,13 +5,14 @@ import * as styles from "../../styles/project.module.css"
 
 const Projects = ({ data }) => {
   const projects = data.allMarkdownRemark.nodes
+  console.log(data)
   return (
     <Layout>
       <div className={styles.projects}>
         <h2>Projects</h2>
         <h3>View my works here</h3>
 
-        <div>
+        <div className={styles.project_list}>
           {projects.map(project => {
             return (
               <Link
@@ -33,7 +34,7 @@ const Projects = ({ data }) => {
 
 export const query = graphql`
   query ProjectsThings {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
         frontmatter {
           slug
@@ -41,6 +42,11 @@ export const query = graphql`
           title
         }
         id
+      }
+    }
+    site {
+      siteMetadata {
+        description
       }
     }
   }
