@@ -27,10 +27,12 @@ const AllProducts = () => {
   const recipes = data.allContentfulRecipe.nodes
 
   return (
-    <section className="recipes-container">
-      <TagList recipes={recipes} />
-      <ProductsList recipes={recipes} />
-    </section>
+    <main className="page">
+      <section className="recipes-container">
+        <TagList recipes={recipes} />
+        <ProductsList recipes={recipes} />
+      </section>
+    </main>
   )
 }
 
