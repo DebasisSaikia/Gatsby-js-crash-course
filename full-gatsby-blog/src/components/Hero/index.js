@@ -1,6 +1,8 @@
 import { Link } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { getImage } from 'gatsby-plugin-image'
 import React from 'react'
+import BgImage from '../BgImage'
+import { HeroWrapper, TextWrapper } from './Hero.styles'
 import { useHeroQuery } from '../custom-hooks/useHeroQuery'
 
 const Hero = () => {
@@ -10,16 +12,16 @@ const Hero = () => {
         heroImage } = useHeroQuery()
     console.log(heroImage)
     return (
-        <div>
-            <div>
-                <div>
+        <HeroWrapper>
+            <BgImage image={getImage(heroImage.childImageSharp)} alt="heroImage" >
+                <TextWrapper>
                     <h2>{heroImageText}</h2>
                     <Link to={heroImageBtnLink}>
                         <button>{heroImageBtnText}</button>
                     </Link>
-                </div>
-            </div>
-        </div>
+                </TextWrapper>
+            </BgImage>
+        </HeroWrapper>
     )
 }
 

@@ -1,19 +1,29 @@
 import * as React from "react"
 import Layout from "components/Layout"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 import SEO from 'components/SEO'
 import Hero from "../components/Hero"
 import BlogCard from "../components/BlogCard"
 import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => {
-  console.log(data)
+  const posts = data.allMarkdownRemark.edges
   return (
     <Layout>
       <SEO title="Home" />
       <Hero />
       <main>
-        <BlogCard />
+        {posts.map(({ node }, i) => {
+          const title = node.frontmatter.title
+          return (
+            <BlogCard
+              key={i} slug="/" title={title} date={node.frontmatter.date}
+              readingTime={node.fields.readingTime.text} excerpt={node.excerpt}
+              image={getImage(node.frontmatter.image.childImageSharp)}
+            />
+          )
+        })}
+
       </main>
     </Layout>
   )
