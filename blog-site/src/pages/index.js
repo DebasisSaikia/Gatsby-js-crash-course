@@ -2,8 +2,9 @@ import React from "react"
 import Layout from "../components/Layout"
 import * as styles from "../styles/home.module.css"
 import { graphql, Link } from "gatsby"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <Layout>
       <section className={styles.header}>
@@ -15,12 +16,22 @@ export default function Home() {
             View Works
           </Link>
         </div>
-        <img
-          src="/burgundy-excursion.png"
-          alt="banner"
-          style={{ maxWidth: "100%" }}
-        />
+        <GatsbyImage image={getImage(data.file)} alt="banner" />
       </section>
     </Layout>
   )
 }
+
+export const query = graphql`
+  {
+    file(relativePath: { eq: "burgundy-excursion.png" }) {
+      childImageSharp {
+        gatsbyImageData(
+          layout: CONSTRAINED
+          placeholder: TRACED_SVG
+          formats: AUTO
+        )
+      }
+    }
+  }
+`

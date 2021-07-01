@@ -11,7 +11,6 @@ const Layout = ({ children }) => {
         <ThemeProvider theme={darkTheme}>
             <GlobalStyles />
             <Header siteTitle={data.title} />
-            Components
             {children}
         </ThemeProvider>
     )

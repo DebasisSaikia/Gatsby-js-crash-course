@@ -7,6 +7,7 @@ const MenuItems = ({ menuOpen, items }) => (
         <OverrideGlobalStyle menuOpen={menuOpen} />
         <MenuContainer menuOpen={menuOpen}>
             <Nav>
+
                 {items.map((item) => {
                     return <li key={item.id}>
                         <Link to={item.link}>
@@ -14,6 +15,8 @@ const MenuItems = ({ menuOpen, items }) => (
                         </Link>
                     </li>
                 })}
+
+
             </Nav>
         </MenuContainer>
     </>
