@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 export const BgWrapper = styled.div`
   position: relative;
