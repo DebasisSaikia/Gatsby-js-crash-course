@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
 export const useHeroQuery = () => {
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query HeroQuery {
   markdownRemark(frontmatter: {type: {eq: "hero"}}) {
     frontmatter {
@@ -18,5 +18,5 @@ export const useHeroQuery = () => {
 }
     `)
 
-    return data.markdownRemark.frontmatter
+  return data.markdownRemark.frontmatter
 }
