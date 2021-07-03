@@ -17,7 +17,7 @@ const IndexPage = ({ data }) => {
           const title = node.frontmatter.title
           return (
             <BlogCard
-              key={i} slug="/" title={title} date={node.frontmatter.date}
+              key={i} slug={node.fields.slug} title={title} date={node.frontmatter.date}
               readingTime={node.fields.readingTime.text} excerpt={node.excerpt}
               image={getImage(node.frontmatter.image.childImageSharp)}
             />
@@ -43,6 +43,7 @@ export const indexQuery = graphql`
             readingTime {
               text
             }
+            slug
           }
           frontmatter {
             date
